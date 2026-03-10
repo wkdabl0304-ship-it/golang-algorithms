@@ -30,6 +30,8 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
+// 解题思路：通过 map 避免嵌套遍历
+
 func main() {
 	nums := []int{2, 7, 11, 15}
 	target := 9
