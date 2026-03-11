@@ -37,10 +37,10 @@ func threeSum(nums []int) [][]int {
 			sum := nums[i] + nums[left] + nums[right]
 			if sum == 0 {
 				res = append(res, []int{nums[i], nums[left], nums[right]})
-				for nums[left] == nums[left+1] && left < right {
+				for left < right && nums[left] == nums[left+1] {
 					left++
 				}
-				for nums[right] == nums[right-1] && left < right {
+				for left < right && nums[right] == nums[right-1] {
 					right--
 				}
 				left++
@@ -56,6 +56,7 @@ func threeSum(nums []int) [][]int {
 }
 
 // 做法总结：双指针问题一般可以通过已知解来贪心剪枝
+// 左右双指针一般限制条件有 left < right
 
 func main() {
 	nums := []int{-1, 0, 1, 2, -1, -4}
