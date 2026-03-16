@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 标准解法：阶梯法，通过线性搜索的方式避免了使用搜索算法，关键是要让选择有区分性
 func searchMatrix(matrix [][]int, target int) bool {
 	i, j := 0, len(matrix[0])-1
 	for {
