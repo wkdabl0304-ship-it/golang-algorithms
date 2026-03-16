@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-type ListNode struct {
+type ListNode0160 struct {
 	Val  int
-	Next *ListNode
+	Next *ListNode0160
 }
 
 // 标准解法：双指针法，通过相交链表的特殊性找到追及的共同点，避免了对 map 的使用
-func getIntersectionNode(headA, headB *ListNode) *ListNode {
+func getIntersectionNode(headA, headB *ListNode0160) *ListNode0160 {
 	pA, pB := headA, headB
 	for pA != pB {
 		if pA != nil {
@@ -26,8 +26,8 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 }
 
 func main() {
-	a1, a2, c1, c2, c3 := new(ListNode), new(ListNode), new(ListNode), new(ListNode), new(ListNode)
-	b1, b2 := new(ListNode), new(ListNode)
+	a1, a2, c1, c2, c3 := new(ListNode0160), new(ListNode0160), new(ListNode0160), new(ListNode0160), new(ListNode0160)
+	b1, b2 := new(ListNode0160), new(ListNode0160)
 	a1.Next = a2
 	a2.Next = c1
 	c1.Next = c2
