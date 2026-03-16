@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-type ListNode struct {
+type ListNode0141 struct {
 	Val  int
-	Next *ListNode
+	Next *ListNode0141
 }
 
 // 标准解法：快慢指针追逐法，避免了用 map
-func hasCycle(head *ListNode) bool {
+func hasCycle(head *ListNode0141) bool {
 	if head == nil {
 		return false
 	}
@@ -24,7 +24,7 @@ func hasCycle(head *ListNode) bool {
 }
 
 func main() {
-	a1, a2, a3, a4 := new(ListNode), new(ListNode), new(ListNode), new(ListNode)
+	a1, a2, a3, a4 := new(ListNode0141), new(ListNode0141), new(ListNode0141), new(ListNode0141)
 	a1.Val, a2.Val, a3.Val, a4.Val = 3, 2, 0, -4
 	a1.Next = a2
 	a2.Next = a3
