@@ -44,6 +44,8 @@ func maxDepth(root *TreeNode0104) int {
 	return res
 }
 
+// 思路总结：通过维护一个队列来存储每层的结点，所需空间为树的最大宽度
+
 func main() {
 	a1, a11, a12, a21, a22 := new(TreeNode0104), new(TreeNode0104), new(TreeNode0104), new(TreeNode0104), new(TreeNode0104)
 	a1.Left, a1.Right = a11, a12
