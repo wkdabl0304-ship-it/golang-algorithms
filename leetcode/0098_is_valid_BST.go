@@ -11,27 +11,50 @@ type TreeNode0098 struct {
 	Right *TreeNode0098
 }
 
-// 标准解法：中序遍历
+// 个人解法：中序遍历
+//func isValidBST(root *TreeNode0098) bool {
+//	previous := math.MinInt64
+//	var inorder func(node *TreeNode0098) bool
+//	inorder = func(node *TreeNode0098) bool {
+//		if node == nil {
+//			return true
+//		}
+//		if !inorder(node.Left) {
+//			return false
+//		}
+//		if node.Val <= previous {
+//			return false
+//		}
+//		previous = node.Val
+//		return inorder(node.Right)
+//	}
+//	return inorder(root)
+//}
+
+// 标准解法：迭代法
 func isValidBST(root *TreeNode0098) bool {
 	previous := math.MinInt64
-	var inorder func(node *TreeNode0098) bool
-	inorder = func(node *TreeNode0098) bool {
-		if node == nil {
-			return true
+	var stack []*TreeNode0098
+	current := root
+	for current != nil || len(stack) > 0 {
+		for current != nil {
+			stack = append(stack, current)
+			current = current.Left
 		}
-		if !inorder(node.Left) {
+		current = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if current.Val <= previous {
 			return false
 		}
-		if node.Val <= previous {
-			return false
-		}
-		previous = node.Val
-		return inorder(node.Right)
+		previous = current.Val
+		current = current.Right
 	}
-	return inorder(root)
+	return true
 }
 
-// 思路总结：二叉搜索树在中序遍历下满足严格单调递增
+// 思路总结：
+// 1.二叉搜索树在中序遍历下满足严格单调递增
+// 2.中序遍历优先迭代，自上而下可能层序，其它默认递归
 
 func main() {
 	a11, a21, a22, a31, a32 := new(TreeNode0098), new(TreeNode0098), new(TreeNode0098), new(TreeNode0098), new(TreeNode0098)
