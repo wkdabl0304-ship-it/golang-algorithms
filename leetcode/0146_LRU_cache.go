@@ -19,8 +19,8 @@ type LRUCache struct {
 	total    int
 }
 
-// Constructor LRUCache 创建器
-func Constructor(capacity int) LRUCache {
+// Constructor0146 LRUCache 创建器
+func Constructor0146(capacity int) LRUCache {
 	dummyHead := new(ListNode0146)
 	dummyTail := new(ListNode0146)
 	dummyHead.Next = dummyTail
@@ -78,7 +78,7 @@ func (c *LRUCache) Put(key int, value int) {
 }
 
 func main() {
-	obj := Constructor(3)
+	obj := Constructor0146(3)
 	obj.Put(666, 233)
 	param1 := obj.Get(666)
 	fmt.Println(param1)
