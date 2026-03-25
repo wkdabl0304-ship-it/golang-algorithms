@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // 标准解法：阶梯法，通过线性搜索的方式避免了使用搜索算法，关键是要让选择有区分性
-func searchMatrix(matrix [][]int, target int) bool {
+func searchMatrix0074(matrix [][]int, target int) bool {
 	i, j := 0, len(matrix[0])-1
 	for {
 		if matrix[i][j] == target {
@@ -23,5 +23,5 @@ func searchMatrix(matrix [][]int, target int) bool {
 func main() {
 	matrix := [][]int{{1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30}}
 	target := 5
-	fmt.Println(searchMatrix(matrix, target))
+	fmt.Println(searchMatrix0074(matrix, target))
 }
