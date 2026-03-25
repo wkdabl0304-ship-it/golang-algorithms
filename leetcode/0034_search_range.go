@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func searchRange(nums []int, target int) []int {
-	right := search(nums, target, true) - 1
-	left := search(nums, target, false)
+	right := search0034(nums, target, true) - 1
+	left := search0034(nums, target, false)
 	if left <= right && left >= 0 && left < len(nums) && nums[left] == target {
 		return []int{left, right}
 	}
 	return []int{-1, -1}
 }
 
-func search(nums []int, target int, isRight bool) int {
+func search0034(nums []int, target int, isRight bool) int {
 	left, right := 0, len(nums)-1
 	for left <= right {
 		mid := left + (right-left)>>1
