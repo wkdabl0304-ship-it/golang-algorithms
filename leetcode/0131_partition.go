@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // 标准解法：回溯算法
-func partition(s string) [][]string {
+func partition0131(s string) [][]string {
 	var path []string
 	var res [][]string
 	var backtrack func(start int)
@@ -38,5 +38,5 @@ func isPalindrome0131(s string) bool {
 
 func main() {
 	s := "aab"
-	fmt.Println(partition(s))
+	fmt.Println(partition0131(s))
 }
