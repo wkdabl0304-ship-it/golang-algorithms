@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// 标准解法：小顶堆
 type minHeap0347 []elem0347
 
 type elem0347 struct {
@@ -58,6 +59,10 @@ func topKFrequent(nums []int, k int) []int {
 	}
 	return res
 }
+
+// 思路总结：
+// 1.最好先初始化好数组再初始化堆
+// 2.堆空间要限制，不然浪费空间
 
 func main() {
 	nums := []int{1, 2, 1, 2, 1, 2, 3, 1, 3, 2}
